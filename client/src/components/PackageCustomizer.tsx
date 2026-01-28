@@ -159,7 +159,10 @@ export function PackageCustomizer() {
                   <p className="text-3xl font-bold text-primary">€{setupPrice + monthlyPrice}</p>
                 </div>
 
-                <button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 rounded-lg transition-colors">
+                <button
+                  className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 rounded-lg transition-colors"
+                  onClick={() => window.open(`https://wa.me/351939427390?text=Olá, gostaria de obter um orçamento personalizado. Valor estimado: €${setupPrice + monthlyPrice}`, '_blank')}
+                >
                   Obter Orçamento Personalizado
                 </button>
 
