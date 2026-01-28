@@ -39,11 +39,11 @@ export function ROICalculator() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Input Section */}
           <Card className="p-8 border border-border">
-            <h3 className="text-xl font-bold text-primary mb-6">Your Metrics</h3>
+            <h3 className="text-xl font-bold text-primary mb-6">As Suas Métricas</h3>
             <div className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
-                  Expected Monthly Leads
+                  Leads Mensais Esperadas
                 </label>
                 <input
                   type="range"
@@ -62,7 +62,7 @@ export function ROICalculator() {
 
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
-                  Conversion Rate (%)
+                  Taxa de Conversão (%)
                 </label>
                 <input
                   type="range"
@@ -81,7 +81,7 @@ export function ROICalculator() {
 
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
-                  Average Policy Value (€)
+                  Valor Médio da Apólice (€)
                 </label>
                 <input
                   type="range"
@@ -107,19 +107,19 @@ export function ROICalculator() {
             <Card className="p-8 border-2 border-secondary/30 bg-gradient-to-br from-white to-secondary/5">
               <div className="flex items-center gap-3 mb-4">
                 <TrendingUp className="w-6 h-6 text-secondary" />
-                <h4 className="text-lg font-bold text-primary">Revenue Projection</h4>
+                <h4 className="text-lg font-bold text-primary">Projeção de Receita</h4>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Monthly Conversions:</span>
+                  <span className="text-muted-foreground">Conversões Mensais:</span>
                   <span className="text-xl font-bold text-foreground">{monthlyConversions}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Monthly Revenue:</span>
+                  <span className="text-muted-foreground">Receita Mensal:</span>
                   <span className="text-2xl font-bold text-secondary">€{monthlyRevenue.toLocaleString()}</span>
                 </div>
                 <div className="border-t border-border pt-3 flex justify-between items-center">
-                  <span className="text-muted-foreground font-semibold">Annual Revenue:</span>
+                  <span className="text-muted-foreground font-semibold">Receita Anual:</span>
                   <span className="text-3xl font-bold text-primary">€{annualRevenue.toLocaleString()}</span>
                 </div>
               </div>
@@ -128,28 +128,28 @@ export function ROICalculator() {
             {/* ROI Comparison */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Card className="p-6 border border-border">
-                <h5 className="font-semibold text-primary mb-3">Growth Foundation</h5>
+                <h5 className="font-semibold text-primary mb-3">Fundação de Crescimento</h5>
                 <div className="space-y-2">
-                  <div className="text-sm text-muted-foreground">Annual Cost: €{foundationCost.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground">Custo Anual: €{foundationCost.toLocaleString()}</div>
                   <div className="text-2xl font-bold text-secondary">€{foundationROI.toLocaleString()}</div>
-                  <div className="text-xs text-muted-foreground">Net Profit (Year 1)</div>
+                  <div className="text-xs text-muted-foreground">Lucro Líquido (Ano 1)</div>
                   <div className="text-xl font-bold text-primary mt-2">{foundationROIPercent}% ROI</div>
                 </div>
               </Card>
 
               <Card className="p-6 border-2 border-secondary/50 bg-gradient-to-br from-white to-secondary/5">
-                <h5 className="font-semibold text-primary mb-3">Market Leader</h5>
+                <h5 className="font-semibold text-primary mb-3">Líder de Mercado</h5>
                 <div className="space-y-2">
-                  <div className="text-sm text-muted-foreground">Annual Cost: €{leaderAnnualCost.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground">Custo Anual: €{leaderAnnualCost.toLocaleString()}</div>
                   <div className="text-2xl font-bold text-secondary">€{leaderROI.toLocaleString()}</div>
-                  <div className="text-xs text-muted-foreground">Net Profit (Year 1)</div>
+                  <div className="text-xs text-muted-foreground">Lucro Líquido (Ano 1)</div>
                   <div className="text-xl font-bold text-primary mt-2">{leaderROIPercent}% ROI</div>
                 </div>
               </Card>
             </div>
 
             <p className="text-xs text-muted-foreground italic">
-              *Based on your inputs. Actual results may vary. These projections assume consistent lead generation and conversion rates.
+              *Baseado nas suas estimativas. Os resultados reais podem variar. Estas projeções assumem geração de leads consistente e taxas de conversão estáveis.
             </p>
           </div>
         </div>

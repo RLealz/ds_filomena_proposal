@@ -11,46 +11,46 @@ interface TimelinePhase {
 
 const phases: TimelinePhase[] = [
   {
-    week: "Week 1",
-    title: "Discovery & Planning",
+    week: "Semana 1",
+    title: "Descoberta e Planeamento",
     tasks: [
-      "Initial consultation & requirements gathering",
-      "Brand guidelines review",
-      "Content strategy development",
-      "Technical setup & integrations",
+      "Consulta inicial e levantamento de requisitos",
+      "Análise de diretrizes da marca",
+      "Desenvolvimento de estratégia de conteúdo",
+      "Configuração técnica e integrações",
     ],
     status: "upcoming",
   },
   {
-    week: "Week 2-3",
-    title: "Design & Development",
+    week: "Semanas 2-3",
+    title: "Design e Desenvolvimento",
     tasks: [
-      "Landing page design & development",
-      "AI chatbot configuration",
-      "Social media profile optimization",
-      "Automation workflow setup",
+      "Design e desenvolvimento da Landing Page",
+      "Configuração do Chatbot IA",
+      "Otimização de perfis de Redes Sociais",
+      "Configuração de fluxos de automação",
     ],
     status: "upcoming",
   },
   {
-    week: "Week 4",
-    title: "Testing & Launch",
+    week: "Semana 4",
+    title: "Testes e Lançamento",
     tasks: [
-      "Quality assurance & testing",
-      "Lead capture testing",
-      "Performance optimization",
-      "Go-live & monitoring",
+      "Garantia de qualidade e testes",
+      "Teste de captura de leads",
+      "Otimização de desempenho",
+      "Lançamento e monitorização",
     ],
     status: "upcoming",
   },
   {
-    week: "Ongoing",
-    title: "Optimization & Support",
+    week: "Contínuo",
+    title: "Otimização e Suporte",
     tasks: [
-      "Monthly performance analytics",
-      "Lead funnel optimization",
-      "Social media management (Market Leader)",
-      "Continuous improvement",
+      "Análise mensal de desempenho",
+      "Otimização do funil de leads",
+      "Gestão de redes sociais (Líder de Mercado)",
+      "Melhoria contínua",
     ],
     status: "upcoming",
   },
@@ -113,14 +113,14 @@ export function Timeline() {
         <Card className="mt-16 p-8 md:p-12 border-2 border-secondary/30 bg-gradient-to-br from-white to-secondary/5">
           <div className="flex items-center gap-3 mb-6">
             <CheckCircle2 className="w-6 h-6 text-secondary" />
-            <h3 className="text-2xl font-bold text-primary">Success Metrics (Month 1)</h3>
+            <h3 className="text-2xl font-bold text-primary">Métricas de Sucesso (Mês 1)</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { metric: "Landing Page Live", value: "100%" },
-              { metric: "AI Chatbot Active", value: "24/7" },
-              { metric: "Lead Capture Rate", value: "+60%" },
-              { metric: "Setup Complete", value: "4 weeks" },
+              { metric: "Landing Page Ativa", value: "100%" },
+              { metric: "Chatbot IA Ativo", value: "24/7" },
+              { metric: "Taxa de Captação", value: "+60%" },
+              { metric: "Configuração Completa", value: "4 semanas" },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
                 <p className="text-sm text-muted-foreground mb-2">{item.metric}</p>
