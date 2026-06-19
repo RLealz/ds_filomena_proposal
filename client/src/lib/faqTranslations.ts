@@ -1,44 +1,39 @@
 export const faqTranslations = {
   pt: [
     {
-      question: "O que está incluído na landing page?",
+      question: "A análise das minhas apólices tem mesmo custo zero?",
       answer:
-        "A landing page inclui design responsivo para dispositivos móveis, formulários integrados de captura de leads, secção de testemunhos, botões de chamada à ação claros, mensagens específicas de seguros e uma secção dedicada de recrutamento para construção de equipas. Está totalmente otimizada para conversão e inclui integração de chatbot IA.",
+        "Sim, totalmente gratuita e sem compromisso. Envia-me as apólices que já tem, eu reviu tudo e digo-lhe com honestidade onde pode melhorar a cobertura ou poupar. Só avança se fizer sentido para si.",
     },
     {
-      question: "Como funciona o chatbot IA?",
+      question: "Que tipos de seguros trata?",
       answer:
-        "O chatbot IA está disponível 24/7 na sua landing page e faz perguntas preliminares de seguros para qualificar leads automaticamente. Recolhe dados de leads e classifica-os. Nota: A configuração inclui o plano gratuito. Se o volume de mensagens exceder o limite mensal da plataforma, poderão aplicar-se custos de subscrição diretamente com o fornecedor do chatbot.",
+        "Sou especializada em seguros de Vida e Saúde, tanto para particulares e famílias como para empresas. Ajudo-o a escolher a solução certa e a rever o que já tem.",
     },
     {
-      question: "Qual é a diferença entre os dois pacotes?",
+      question: "Com que seguradoras trabalha?",
       answer:
-        "Fundação de Crescimento (€550 único) inclui todos os serviços de configuração iniciais. Líder de Mercado (€550 único + €100/mês) inclui tudo da Fundação mais gestão mensal de redes sociais com 3 posts por semana e motor de conteúdo IA para crescimento contínuo.",
+        "Trabalho com seguradoras de referência como a MetLife, Zurich, Tranquilidade e Realvida. Como mediadora independente, comparo as opções entre elas para encontrar o melhor equilíbrio entre proteção e preço para si.",
     },
     {
-      question: "Quanto tempo leva a implementação?",
+      question: "Como posso realmente poupar mudando de seguro?",
       answer:
-        "A implementação normalmente leva 4 semanas do início ao fim: Semana 1 para descoberta e planeamento, Semanas 2-3 para design e desenvolvimento, e Semana 4 para testes e lançamento. Após o lançamento, a otimização contínua e o suporte continuam com base no seu pacote.",
+        "Muitas pessoas pagam por coberturas que já não precisam, ou têm apólices desajustadas à sua situação atual. Ao analisar toda a carteira em conjunto, é frequente encontrar a mesma proteção (ou melhor) por um valor mais baixo.",
     },
     {
-      question: "Posso fazer upgrade de Fundação para Líder de Mercado mais tarde?",
+      question: "Sou empresa. Que vantagens tenho em contratar seguros de saúde para a equipa?",
       answer:
-        "Absolutamente! Pode começar com o pacote Fundação de Crescimento e fazer upgrade para Líder de Mercado em qualquer altura. A transição é perfeita e adicionaremos os serviços de gestão mensal.",
+        "Além de proteger as suas pessoas-chave e colaboradores, a contratação de seguros de saúde para a equipa pode trazer benefícios fiscais à empresa e é um forte fator de atração e retenção de talento. Analiso o seu caso e mostro-lhe as opções.",
     },
     {
-      question: "Que tipo de ROI posso esperar?",
+      question: "Quanto tempo demora a ter uma resposta?",
       answer:
-        "O ROI depende da sua taxa de geração de leads e métricas de conversão. A nossa calculadora interativa de ROI ajuda-o a estimar com base nos seus números específicos. A maioria dos agentes vê retorno significativo nos primeiros meses através de melhor captura e qualificação de leads.",
+        "Respondo a todos os pedidos em até 12 horas. Sei que estas decisões são importantes e que merece atenção rápida e personalizada.",
     },
     {
-      question: "O chatbot IA é personalizável para os meus serviços específicos?",
+      question: "Vou ficar obrigada a contratar alguma coisa?",
       answer:
-        "Sim! O chatbot é totalmente personalizável para os seus serviços de seguros, mensagens e objetivos comerciais. Configuramo-lo durante a fase de implementação para fazer perguntas relevantes e qualificar leads conforme os seus critérios.",
-    },
-    {
-      question: "Fornecem treinamento sobre como usar o sistema?",
-      answer:
-        "Sim, fornecemos integração abrangente e treinamento. Incluímos documentação e tutoriais para que saiba gerir as leads que chegam. Clientes do Líder de Mercado têm acompanhamento mais próximo na gestão de redes sociais.",
+        "Não. A análise e o aconselhamento são livres e sem compromisso. O meu trabalho é dar-lhe informação clara para decidir com confiança — a decisão é sempre sua.",
     },
   ],
 };

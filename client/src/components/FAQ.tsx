@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { faqTranslations } from "@/lib/faqTranslations";
+import { whatsappLink } from "@/lib/site";
 
 interface FAQItem {
   question: string;
@@ -59,12 +60,14 @@ export function FAQ() {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             {t("faq.contact_desc")}
           </p>
-          <button
-            onClick={() => alert("Contact form coming soon!")}
-            className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+          <a
+            href={whatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
           >
             {t("faq.touch")}
-          </button>
+          </a>
         </Card>
       </div>
     </section>

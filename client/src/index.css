@@ -43,40 +43,40 @@
 }
 
 :root {
-  /* DS Seguros Green Theme */
-  --primary: #5FBB46; /* DS Seguros Green */
+  /* Marca Filomena Antão — Verde & Branco */
+  --primary: #1B7A5A; /* Verde Profundo — títulos, cabeçalho, rodapé */
   --primary-foreground: #ffffff;
-  --sidebar-primary: #4a9436;
+  --sidebar-primary: #156048;
   --sidebar-primary-foreground: #ffffff;
-  --chart-1: #7ec961;
-  --chart-2: #5FBB46;
-  --chart-3: #4a9436;
-  --chart-4: #3d7a2c;
-  --chart-5: #2d5a20;
+  --chart-1: #2FAE74;
+  --chart-2: #1B7A5A;
+  --chart-3: #156048;
+  --chart-4: #0f4838;
+  --chart-5: #283832;
   --radius: 0.65rem;
-  --background: #f8f9f7;
-  --foreground: #1a1a1a;
+  --background: #ffffff;
+  --foreground: #283832; /* Grafite */
   --card: #ffffff;
-  --card-foreground: #1a1a1a;
+  --card-foreground: #283832;
   --popover: #ffffff;
-  --popover-foreground: #1a1a1a;
-  --secondary: #5FBB46;
+  --popover-foreground: #283832;
+  --secondary: #2FAE74; /* Verde Vivo — botões e destaques */
   --secondary-foreground: #ffffff;
-  --muted: #e5e7e0;
-  --muted-foreground: #6b7280;
-  --accent: #5FBB46;
+  --muted: #EAF6F0; /* Verde-menta Claro — fundos suaves */
+  --muted-foreground: #5b6b63;
+  --accent: #2FAE74;
   --accent-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #e5e7e0;
+  --border: #d6e7df;
   --input: #ffffff;
-  --ring: #5FBB46;
-  --sidebar: #f8f9f7;
-  --sidebar-foreground: #1a1a1a;
-  --sidebar-accent: #5FBB46;
+  --ring: #2FAE74;
+  --sidebar: #EAF6F0;
+  --sidebar-foreground: #283832;
+  --sidebar-accent: #2FAE74;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e5e7e0;
-  --sidebar-ring: #5FBB46;
+  --sidebar-border: #d6e7df;
+  --sidebar-ring: #2FAE74;
 }
 
 .dark {

@@ -1,91 +1,125 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Check, Zap, BarChart3, MessageCircle, Smartphone, TrendingUp } from "lucide-react";
-import { useState } from "react";
-import { PricingComparison } from "@/components/PricingComparison";
-import { MarketResearch } from "@/components/MarketResearch";
-import { ServicesBreakdown } from "@/components/ServicesBreakdown";
-import { ROICalculator } from "@/components/ROICalculator";
-import { Timeline } from "@/components/Timeline";
+import {
+  Check,
+  ShieldCheck,
+  PiggyBank,
+  HeartHandshake,
+  SearchCheck,
+  Users,
+  Building2,
+  MessageCircle,
+  Mail,
+  BadgeCheck,
+} from "lucide-react";
 import { FAQ } from "@/components/FAQ";
-import { PackageCustomizer } from "@/components/PackageCustomizer";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { whatsappLink, CONTACT, PARTNERS } from "@/lib/site";
 
 /**
- * Design Philosophy: DS Seguros Brand Integration
- * - DS Seguros Green (#5FBB46) as primary brand color
- * - Clean, light background (#f8f9f7) with professional typography
- * - Family-focused imagery emphasizing trust and protection
- * - Modern, accessible design with clear call-to-action elements
- * 
- * Section Order (Optimized for Conversion):
- * 1. Hero - Capture attention & value proposition
- * 2. AI & Automation - Build trust with differentiators
- * 3. Services Breakdown - Show what we offer
- * 4. Package Selection - Present pre-defined options
- * 5. Pricing Comparison - Clear feature comparison
- * 6. Package Customizer - Allow customization
- * 7. ROI Calculator - Demonstrate financial value
- * 8. Timeline - Show implementation clarity
- * 9. Market Research - External validation
- * 10. FAQ - Resolve final objections
- * 11. CTA - Final conversion push
+ * Landing page de Filomena Antão — Mediadora de Seguros (Vida e Saúde).
+ *
+ * Página única, focada numa só ação: levar o visitante a pedir uma
+ * análise gratuita das apólices (via WhatsApp) ou a marcar uma conversa.
+ *
+ * Marca: Verde Profundo (#1B7A5A) + Verde Vivo (#2FAE74) sobre branco.
+ *
+ * Ordem das secções (otimizada para conversão):
+ * 1. Hero — proposta de valor + CTA
+ * 2. Vantagem — porquê trabalhar comigo
+ * 3. Para quem — famílias e empresas
+ * 4. Como funciona — 3 passos
+ * 5. Confiança — seguradoras parceiras + certificação
+ * 6. Lead magnet — análise gratuita
+ * 7. FAQ
+ * 8. CTA final
  */
 
 export default function Home() {
-  const [selectedPackage, setSelectedPackage] = useState<"foundation" | "leader">("foundation");
   const { t } = useLanguage();
+
+  const scrollToContact = () =>
+    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation Header */}
+      {/* Navegação */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">FA</span>
             </div>
             <div>
-              <h1 className="text-lg font-bold text-primary">{t("nav.brand")}</h1>
-              <p className="text-xs text-muted-foreground">{t("nav.subtitle")}</p>
+              <h1 className="text-lg font-bold text-primary leading-none">{t("nav.brand")}</h1>
+              <p className="text-xs text-muted-foreground mt-1">{t("nav.subtitle")}</p>
             </div>
           </div>
-
+          <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hidden sm:block">
+            <Button className="bg-secondary hover:bg-secondary/90 text-white rounded-lg shadow-sm">
+              {t("nav.cta")}
+            </Button>
+          </a>
         </div>
       </nav>
 
-      {/* 1. Hero Section with Family Image */}
-      <section className="relative overflow-hidden py-20 md:py-32 bg-gradient-to-br from-background to-white/50">
+      {/* 1. Hero */}
+      <section className="relative overflow-hidden py-20 md:py-28 bg-gradient-to-br from-muted to-white">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="space-y-3">
-                <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">
-                  {t("hero.title")}
-                </h1>
-                <p className="text-xl text-muted-foreground font-light">
-                  {t("hero.subtitle")}
-                </p>
-              </div>
-              <p className="text-lg text-foreground/80 leading-relaxed">
+              <span className="inline-block px-4 py-1.5 bg-secondary/15 text-primary rounded-full text-sm font-semibold">
+                {t("hero.eyebrow")}
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
+                {t("hero.title")}
+              </h1>
+              <p className="text-xl text-foreground/80 font-light">{t("hero.subtitle")}</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t("hero.description")}
               </p>
-              <div className="pt-4">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white px-8 rounded-lg shadow-lg hover:shadow-xl transition-all"
-                  onClick={() => document.getElementById('pacotes')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  {t("hero.cta")}
-                </Button>
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white px-8 rounded-lg shadow-lg hover:shadow-xl transition-all"
+                  >
+                    {t("hero.cta")}
+                  </Button>
+                </a>
+                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto border-primary text-primary hover:bg-primary/5 px-8 rounded-lg"
+                  >
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    {t("hero.cta_secondary")}
+                  </Button>
+                </a>
+              </div>
+
+              {/* Faixa de confiança */}
+              <div className="pt-6">
+                <p className="text-xs uppercase tracking-wide text-muted-foreground mb-3">
+                  {t("hero.trust")}
+                </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {PARTNERS.map((partner) => (
+                    <span key={partner} className="text-sm font-semibold text-primary/70">
+                      {partner}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
+
             <div className="hidden md:block">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl blur-2xl" />
                 <img
                   src="/images/hero-family.png"
-                  alt="Happy Family"
+                  alt="Filomena Antão — Mediadora de Seguros"
                   className="relative rounded-2xl shadow-2xl w-full h-auto object-cover"
                 />
               </div>
@@ -94,329 +128,219 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 2. AI & Automation Section - Build Trust */}
+      {/* 2. Vantagem / Porquê trabalhar comigo */}
       <section className="py-20 md:py-28">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img
-                src="/images/automation-icon-bg.png"
-                alt="AI Automation"
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
-            </div>
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                  {t("automation.title")}
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {t("automation.description")}
-                </p>
-              </div>
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">{t("value.title")}</h2>
+            <p className="text-lg text-muted-foreground">{t("value.subtitle")}</p>
+          </div>
 
-              <div className="space-y-6">
-                {[
-                  { title: t("automation.qualifier"), description: t("automation.qualifier_desc") },
-                  { title: t("automation.notifications"), description: t("automation.notifications_desc") },
-                  { title: t("automation.content"), description: t("automation.content_desc") },
-                  { title: t("automation.sync"), description: t("automation.sync_desc") },
-                ].map((item, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-6 h-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
-                    </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: SearchCheck, title: t("value.analysis"), desc: t("value.analysis_desc") },
+              { icon: HeartHandshake, title: t("value.tailored"), desc: t("value.tailored_desc") },
+              { icon: ShieldCheck, title: t("value.support"), desc: t("value.support_desc") },
+              { icon: PiggyBank, title: t("value.savings"), desc: t("value.savings_desc") },
+            ].map((item, idx) => (
+              <Card
+                key={idx}
+                className="p-8 border border-border hover:border-secondary/50 hover:shadow-lg transition-all"
+              >
+                <div className="w-14 h-14 rounded-xl bg-secondary/15 flex items-center justify-center mb-5">
+                  <item.icon className="w-7 h-7 text-secondary" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Para quem */}
+      <section className="py-20 md:py-28 bg-muted">
+        <div className="container">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">{t("audience.title")}</h2>
+            <p className="text-lg text-muted-foreground">{t("audience.subtitle")}</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                icon: Users,
+                title: t("audience.families"),
+                desc: t("audience.families_desc"),
+                items: [t("audience.families_1"), t("audience.families_2"), t("audience.families_3")],
+              },
+              {
+                icon: Building2,
+                title: t("audience.companies"),
+                desc: t("audience.companies_desc"),
+                items: [t("audience.companies_1"), t("audience.companies_2"), t("audience.companies_3")],
+              },
+            ].map((group, idx) => (
+              <Card key={idx} className="p-8 md:p-10 bg-white border border-border shadow-sm">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <group.icon className="w-7 h-7 text-primary" />
                   </div>
+                  <h3 className="text-2xl font-bold text-primary">{group.title}</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed mb-6">{group.desc}</p>
+                <ul className="space-y-3">
+                  {group.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Como funciona */}
+      <section className="py-20 md:py-28">
+        <div className="container">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">{t("how.title")}</h2>
+            <p className="text-lg text-muted-foreground">{t("how.subtitle")}</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              { n: "1", title: t("how.step1"), desc: t("how.step1_desc") },
+              { n: "2", title: t("how.step2"), desc: t("how.step2_desc") },
+              { n: "3", title: t("how.step3"), desc: t("how.step3_desc") },
+            ].map((step, idx) => (
+              <div key={idx} className="relative text-center">
+                <div className="w-16 h-16 rounded-full bg-secondary text-white text-2xl font-bold flex items-center justify-center mx-auto mb-5 shadow-lg">
+                  {step.n}
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-3">{step.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Confiança */}
+      <section className="py-16 bg-primary text-white">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-sm uppercase tracking-wide text-white/70 mb-4">
+                {t("trust.partners")}
+              </p>
+              <div className="flex flex-wrap gap-x-8 gap-y-3">
+                {PARTNERS.map((partner) => (
+                  <span key={partner} className="text-xl font-bold text-white">
+                    {partner}
+                  </span>
                 ))}
               </div>
             </div>
+            <div className="flex items-start gap-4 md:justify-end">
+              <BadgeCheck className="w-10 h-10 text-secondary flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1">{t("trust.certified")}</h3>
+                <p className="text-white/80">{t("trust.certified_desc")}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 3. Services Breakdown */}
-      <ServicesBreakdown />
-
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 4. Market Research (Moved Up) */}
-      <MarketResearch />
-
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 5. Package Selection Section */}
-      <section id="pacotes" className="py-20 md:py-28 bg-white/50">
+      {/* 6. Lead magnet */}
+      <section id="contacto" className="py-20 md:py-28 bg-muted">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              {t("packages.title")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("packages.subtitle")}
+          <Card className="max-w-4xl mx-auto p-10 md:p-14 border-2 border-secondary/30 bg-white text-center shadow-lg">
+            <div className="w-16 h-16 rounded-full bg-secondary/15 flex items-center justify-center mx-auto mb-6">
+              <SearchCheck className="w-8 h-8 text-secondary" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">{t("lead.title")}</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+              {t("lead.description")}
             </p>
-          </div>
-
-          {/* Package Toggle */}
-          <div className="flex justify-center gap-4 mb-12">
-            <button
-              onClick={() => setSelectedPackage("foundation")}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all ${selectedPackage === "foundation"
-                ? "bg-primary text-white shadow-lg"
-                : "bg-white text-primary border-2 border-primary hover:bg-primary/5"
-                }`}
-            >
-              {t("packages.foundation")}
-            </button>
-            <button
-              onClick={() => setSelectedPackage("leader")}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all ${selectedPackage === "leader"
-                ? "bg-primary text-white shadow-lg"
-                : "bg-white text-primary border-2 border-primary hover:bg-primary/5"
-                }`}
-            >
-              {t("packages.leader")}
-            </button>
-          </div>
-
-          {/* Package Details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Option A: Growth Foundation */}
-            {selectedPackage === "foundation" && (
-              <div className="md:col-span-2 animate-in fade-in duration-300">
-                <Card className="p-8 md:p-12 border-2 border-secondary/30 hover:border-secondary/60 transition-all shadow-lg">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Left: Description */}
-                    <div className="md:col-span-1 space-y-4">
-                      <h3 className="text-2xl font-bold text-primary">{t("foundation.title")}</h3>
-                      <p className="text-foreground/80 leading-relaxed">
-                        {t("foundation.description")}
-                      </p>
-                      <div className="pt-4">
-                        <p className="text-3xl font-bold text-secondary">{t("foundation.price")}</p>
-                        <p className="text-sm text-muted-foreground">{t("foundation.price_label")}</p>
-                      </div>
-                    </div>
-
-                    {/* Middle: Services */}
-                    <div className="md:col-span-1 space-y-4">
-                      <h4 className="font-semibold text-primary text-lg">{t("foundation.services")}</h4>
-                      <ul className="space-y-3">
-                        {[
-                          { icon: Smartphone, text: t("foundation.landing_page"), price: t("foundation.landing_page_price") },
-                          { icon: MessageCircle, text: t("foundation.chatbot"), price: t("foundation.chatbot_price") },
-                          { icon: TrendingUp, text: t("foundation.social"), price: t("foundation.social_price") },
-                          { icon: Zap, text: t("foundation.automation"), price: t("foundation.automation_price") },
-                        ].map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <item.icon className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                            <div className="flex-1">
-                              <p className="font-medium text-foreground">{item.text}</p>
-                              <p className="text-sm text-muted-foreground">{item.price}</p>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Right: Features */}
-                    <div className="md:col-span-1 space-y-4">
-                      <h4 className="font-semibold text-primary text-lg">{t("foundation.features")}</h4>
-                      <ul className="space-y-2">
-                        {[
-                          "Design responsivo para telemóvel",
-                          "Qualificação de leads IA 24/7",
-                          "Otimização LinkedIn & Instagram",
-                          "Sincronização de leads com CRM/Email",
-                          "Notificações instantâneas",
-                          "Pronto para autogestão",
-                        ].map((feature, idx) => (
-                          <li key={idx} className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-secondary" />
-                            <span className="text-sm text-foreground">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            )}
-
-            {/* Option B: Market Leader */}
-            {selectedPackage === "leader" && (
-              <div className="md:col-span-2 animate-in fade-in duration-300">
-                <Card className="p-8 md:p-12 border-2 border-secondary/30 hover:border-secondary/60 transition-all shadow-lg bg-gradient-to-br from-white to-secondary/5">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Left: Description */}
-                    <div className="md:col-span-1 space-y-4">
-                      <div className="inline-block px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-semibold mb-2">
-                        {t("leader.badge")}
-                      </div>
-                      <h3 className="text-2xl font-bold text-primary">{t("leader.title")}</h3>
-                      <p className="text-foreground/80 leading-relaxed">
-                        {t("leader.description")}
-                      </p>
-                      <div className="pt-4 space-y-1">
-                        <p className="text-3xl font-bold text-secondary">{t("foundation.price")}</p>
-                        <p className="text-sm text-muted-foreground">{t("leader.initial")}</p>
-                        <p className="text-2xl font-bold text-primary mt-2">+€100/mês</p>
-                        <p className="text-sm text-muted-foreground">{t("leader.monthly")}</p>
-                      </div>
-                    </div>
-
-                    {/* Middle: Services */}
-                    <div className="md:col-span-1 space-y-4">
-                      <h4 className="font-semibold text-primary text-lg">{t("foundation.services")}</h4>
-                      <ul className="space-y-3">
-                        {[
-                          { icon: Smartphone, text: t("leader.everything"), price: t("leader.everything_price") },
-                          { icon: TrendingUp, text: t("leader.management"), price: t("leader.management_price") },
-                          { icon: Zap, text: t("leader.ai_engine"), price: t("leader.ai_engine_price") },
-                          { icon: BarChart3, text: t("leader.nurturing"), price: t("leader.nurturing_price") },
-                        ].map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <item.icon className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                            <div className="flex-1">
-                              <p className="font-medium text-foreground">{item.text}</p>
-                              <p className="text-sm text-muted-foreground">{item.price}</p>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Right: Benefits */}
-                    <div className="md:col-span-1 space-y-4">
-                      <h4 className="font-semibold text-primary text-lg">{t("leader.benefits")}</h4>
-                      <ul className="space-y-2">
-                        {[
-                          "Tudo da Fundação +",
-                          "Gestor de conta dedicado",
-                          "Relatórios de desempenho semanais",
-                          "Sessões de estratégia mensais",
-                          "Suporte prioritário (24/7)",
-                          "Integrações personalizadas",
-                        ].map((benefit, idx) => (
-                          <li key={idx} className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-secondary" />
-                            <span className="text-sm text-foreground">{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 5. Pricing Comparison Table */}
-      <section className="py-20 md:py-28">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              {t("comparison.title")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("comparison.subtitle")}
-            </p>
-          </div>
-          <Card className="p-6 md:p-8 border border-border">
-            <PricingComparison />
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                className="bg-secondary hover:bg-secondary/90 text-white px-10 rounded-lg shadow-lg hover:shadow-xl transition-all"
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                {t("lead.cta")}
+              </Button>
+            </a>
+            <p className="text-sm text-muted-foreground mt-4">{t("lead.note")}</p>
           </Card>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 7. ROI Calculator */}
-      <ROICalculator />
-
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 8. Timeline */}
-      <Timeline />
-
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 9. Package Customizer */}
-      <PackageCustomizer />
-
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 10. FAQ Section */}
+      {/* 7. FAQ */}
       <FAQ />
 
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-
-      {/* 11. CTA Section */}
+      {/* 8. CTA final */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-primary to-primary/90">
         <div className="container">
           <div className="text-center space-y-8 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              {t("cta.title")}
-            </h2>
-            <p className="text-lg text-white/90 leading-relaxed">
-              {t("cta.description")}
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">{t("cta.title")}</h2>
+            <p className="text-lg text-white/90 leading-relaxed">{t("cta.description")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button
-                size="lg"
-                className="bg-white text-primary hover:bg-white/90 px-8 rounded-lg font-semibold shadow-lg"
-                onClick={() => alert("Consultation scheduling feature coming soon!")}
-              >
-                {t("cta.consultation")}
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 px-8 rounded-lg font-semibold"
-                onClick={() => alert("Download proposal feature coming soon!")}
-              >
-                {t("cta.download")}
-              </Button>
+              <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 px-8 rounded-lg font-semibold shadow-lg"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  {t("cta.consultation")}
+                </Button>
+              </a>
+              <a href={`mailto:${CONTACT.email}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto border-white text-white hover:bg-white/10 px-8 rounded-lg font-semibold"
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  {t("cta.secondary")}
+                </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-primary text-white/80 py-8 border-t border-white/10">
+      {/* Rodapé */}
+      <footer className="bg-primary text-white/80 py-10 border-t border-white/10">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm">
-              {t("footer.copyright")}
-            </p>
+            <p className="text-sm">{t("footer.copyright")}</p>
             <div className="flex gap-6">
-              <a href="#" className="text-sm hover:text-white transition-colors">
-                {t("footer.privacy")}
+              <a
+                href={CONTACT.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm hover:text-white transition-colors"
+              >
+                {t("footer.linkedin")}
               </a>
-              <a href="#" className="text-sm hover:text-white transition-colors">
-                {t("footer.terms")}
+              <a
+                href={CONTACT.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm hover:text-white transition-colors"
+              >
+                {t("footer.instagram")}
               </a>
-              <a href="#" className="text-sm hover:text-white transition-colors">
+              <a
+                href={`mailto:${CONTACT.email}`}
+                className="text-sm hover:text-white transition-colors"
+              >
                 {t("footer.contact")}
               </a>
             </div>

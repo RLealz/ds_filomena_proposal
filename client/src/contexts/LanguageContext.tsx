@@ -12,171 +12,100 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const translations = {
   pt: {
-    // Navigation
+    // Navegação
     "nav.brand": "Filomena Antão",
-    "nav.subtitle": "DS Seguros - Serviços Digitais",
+    "nav.subtitle": "Mediadora de Seguros · Vida e Saúde",
+    "nav.cta": "Análise gratuita",
 
-    // Hero Section
-    "hero.title": "Transforme a Sua Presença Digital",
+    // Hero
+    "hero.eyebrow": "Mediadora independente de Vida e Saúde",
+    "hero.title": "Melhor cobertura. Mais poupança. Ao seu lado.",
     "hero.subtitle":
-      "Serviços digitais estratégicos concebidos para elevar a sua agência de seguros e maximizar a geração de leads.",
+      "Sou a Filomena Antão e ajudo famílias e empresas a protegerem o que mais importa — sem pagarem a mais por isso.",
     "hero.description":
-      "Combinando landing pages de alta conversão, gestão profissional de redes sociais e automação alimentada por IA para o posicionar como líder de mercado.",
-    "hero.cta": "Explorar Pacotes",
+      "Analiso toda a sua carteira de seguros para encontrar a cobertura certa e poupança real, com soluções ajustadas à sua realidade e acompanhamento próximo do início ao fim.",
+    "hero.cta": "Pedir análise gratuita",
+    "hero.cta_secondary": "Falar comigo no WhatsApp",
+    "hero.trust": "Seguradoras parceiras",
 
-    // Package Selection
-    "packages.title": "Pacotes de Serviços",
-    "packages.subtitle":
-      "Escolha o pacote que melhor se adequa à sua estratégia de crescimento e objetivos comerciais.",
-    "packages.foundation": "Fundação de Crescimento",
-    "packages.leader": "Líder de Mercado",
+    // Vantagem / O que faço
+    "value.title": "Porquê trabalhar comigo",
+    "value.subtitle":
+      "Não vendo apólices avulsas. Olho para o conjunto e construo a solução que faz sentido para si.",
+    "value.analysis": "Análise integral da carteira",
+    "value.analysis_desc":
+      "Revejo todos os seus seguros para perceber onde há cobertura a mais, a menos — e onde pode poupar.",
+    "value.tailored": "Soluções à sua medida",
+    "value.tailored_desc":
+      "Cada proposta é ajustada à sua realidade e objetivos, não a um pacote igual para todos.",
+    "value.support": "Acompanhamento personalizado",
+    "value.support_desc":
+      "Fico ao seu lado antes, durante e depois — para tirar dúvidas, ajustar e ajudar quando precisa.",
+    "value.savings": "Foco na poupança real",
+    "value.savings_desc":
+      "Comparo opções entre seguradoras de referência para garantir o melhor equilíbrio entre proteção e preço.",
 
-    // Growth Foundation Package
-    "foundation.title": "Fundação de Crescimento",
-    "foundation.description":
-      "Infraestrutura profissional concebida para gerir de forma independente após o lançamento.",
-    "foundation.price": "€550",
-    "foundation.price_label": "Investimento único",
-    "foundation.services": "Serviços Incluídos",
-    "foundation.features": "Características Principais",
-    "foundation.landing_page": "Landing Page Personalizada",
-    "foundation.landing_page_price": "€250",
-    "foundation.chatbot": "Configuração de Chatbot IA (Plano Base)",
-    "foundation.chatbot_price": "€75",
-    "foundation.social": "Revitalização de Redes Sociais",
-    "foundation.social_price": "€150",
-    "foundation.automation": "Configuração de Automação",
-    "foundation.automation_price": "€100",
+    // Para quem
+    "audience.title": "Para quem trabalho",
+    "audience.subtitle": "Soluções de Vida e Saúde para dois mundos que conheço bem.",
+    "audience.families": "Famílias e particulares",
+    "audience.families_desc":
+      "Casais e famílias que querem proteger a saúde e o futuro de quem amam, com a tranquilidade de estarem bem cobertos.",
+    "audience.families_1": "Seguros de Vida e proteção da família",
+    "audience.families_2": "Seguros de Saúde com a melhor relação cobertura/preço",
+    "audience.families_3": "Revisão das apólices que já tem",
+    "audience.companies": "Empresas",
+    "audience.companies_desc":
+      "Empresas que querem proteger as suas pessoas-chave e oferecer benefícios que fazem a diferença — com vantagens fiscais.",
+    "audience.companies_1": "Seguros de Saúde para colaboradores",
+    "audience.companies_2": "Proteção de pessoas-chave da empresa",
+    "audience.companies_3": "Benefícios fiscais na contratação",
 
-    // Market Leader Package
-    "leader.title": "Líder de Mercado",
-    "leader.badge": "RECOMENDADO",
-    "leader.description":
-      "Solução completa com gestão contínua para garantir crescimento consistente e fluxo de leads.",
-    "leader.initial": "Configuração inicial",
-    "leader.monthly": "Gestão contínua",
-    "leader.everything": "Tudo da Fundação de Crescimento",
-    "leader.everything_price": "€550",
-    "leader.management": "Gestão de Redes Sociais",
-    "leader.management_price": "€100",
-    "leader.ai_engine": "Motor de Conteúdo IA",
-    "leader.ai_engine_price": "Incluído",
-    "leader.nurturing": "Nutrição e Otimização de Leads",
-    "leader.nurturing_price": "Incluído",
+    // Como funciona
+    "how.title": "Como funciona",
+    "how.subtitle": "Simples, sem compromisso e sem custos para começar.",
+    "how.step1": "Pede a sua análise gratuita",
+    "how.step1_desc":
+      "Fala comigo por WhatsApp ou email. Conta-me o que já tem e o que precisa.",
+    "how.step2": "Analiso a sua carteira",
+    "how.step2_desc":
+      "Reviu as suas apólices e comparo opções entre seguradoras para encontrar a melhor solução.",
+    "how.step3": "Recebe a melhor solução",
+    "how.step3_desc":
+      "Apresento-lhe uma proposta clara, com melhor cobertura e poupança — e fico a acompanhar.",
 
-    // Feature Comparison
-    "comparison.title": "Comparação Detalhada de Características",
-    "comparison.subtitle": "Veja exatamente o que está incluído em cada pacote.",
-    "comparison.feature": "Característica",
-    "comparison.foundation": "Fundação de Crescimento",
-    "comparison.leader": "Líder de Mercado",
+    // Confiança
+    "trust.title": "Confiança que se vê",
+    "trust.partners": "Trabalho com seguradoras de referência",
+    "trust.certified": "Mediadora de seguros certificada",
+    "trust.certified_desc":
+      "Aconselhamento independente e isento, sempre no seu interesse.",
 
-    // Services Breakdown
-    "services.title": "Decomposição dos Componentes de Serviços",
-    "services.subtitle":
-      "Cada serviço é cuidadosamente concebido para funcionar em conjunto como um sistema integrado para máximo impacto.",
-    "services.landing_page": "Landing Page Personalizada",
-    "services.landing_page_desc": "Página de alta conversão concebida especificamente para captura de leads de seguros",
-    "services.chatbot": "Integração de Chatbot IA",
-    "services.chatbot_desc": "Qualificação automatizada (Inclui plano gratuito até limite de mensagens/mês)",
-    "services.social": "Revitalização de Redes Sociais",
-    "services.social_desc": "Otimização profissional de perfis LinkedIn e Instagram",
-    "services.automation": "Configuração de Automação",
-    "services.automation_desc": "Integração perfeita da captura de leads com o seu fluxo de trabalho",
-    "services.analytics": "Análise Mensal",
-    "services.analytics_desc": "Relatórios de desempenho detalhados e insights de otimização",
-    "services.community": "Gestão Comunitária",
-    "services.community_desc": "Envolvimento contínuo e construção de relacionamentos nas plataformas sociais",
-
-    // AI & Automation
-    "automation.title": "Automação Alimentada por IA",
-    "automation.description":
-      "Aproveite a IA de ponta e a automação para simplificar a captura de leads e facilitar o seu trabalho.",
-    "automation.qualifier": "Qualificador de Leads IA 24/7",
-    "automation.qualifier_desc":
-      "Chatbot na sua landing page faz perguntas preliminares para pré-qualificar leads automaticamente.",
-    "automation.notifications": "Notificações Instantâneas",
-    "automation.notifications_desc":
-      "Receba alertas por WhatsApp ou Email no momento em que um lead de alta intenção é capturado.",
-    "automation.content": "Automação de Conteúdo",
-    "automation.content_desc":
-      "IA gera posts de conselhos de seguros localizados e profissionais para manter o seu LinkedIn ativo.",
-    "automation.sync": "Integração de Sincronização de Leads",
-    "automation.sync_desc":
-      "Integração automática com o seu CRM ou sistema de email para fluxo de trabalho perfeito.",
-
-    // Market Research
-    "research.title": "Pesquisa de Mercado e Benchmarking",
-    "research.subtitle":
-      "O nosso preço é baseado em análise abrangente do mercado português de serviços digitais (2024-2025).",
-    "research.social_media": "Gestão de Redes Sociais",
-    "research.social_metric": "€250-600/mês",
-    "research.social_desc":
-      "Custo médio para profissionais independentes e pequenos negócios em Portugal",
-    "research.landing": "Desenvolvimento de Landing Page",
-    "research.landing_metric": "€500-1.200",
-    "research.landing_desc": "Páginas profissionais de alta conversão com funcionalidade de captura de leads",
-    "research.ai": "Ferramentas de Automação IA",
-    "research.ai_metric": "$30-100/mês",
-    "research.ai_desc": "Plataformas de chatbots de qualificação de leads e automação de fluxo de trabalho",
-    "research.advantage": "A Nossa Vantagem Competitiva",
-    "research.what_you_get": "O Que Obtém",
-    "research.market_context": "Contexto de Mercado",
-
-    // ROI Calculator
-    "roi.title": "Calculadora de ROI",
-    "roi.subtitle":
-      "Estime o seu potencial retorno sobre o investimento com base nas suas métricas de geração de leads e conversão.",
-    "roi.metrics": "As Suas Métricas",
-    "roi.monthly_leads": "Leads Mensais Esperados",
-    "roi.conversion": "Taxa de Conversão (%)",
-    "roi.policy_value": "Valor Médio da Apólice (€)",
-    "roi.projection": "Projeção de Receita",
-    "roi.conversions": "Conversões Mensais:",
-    "roi.monthly_revenue": "Receita Mensal:",
-    "roi.annual_revenue": "Receita Anual:",
-    "roi.foundation_cost": "Custo Anual: €550",
-    "roi.leader_cost": "Custo Anual: €1.750",
-    "roi.net_profit": "Lucro Líquido (Ano 1)",
-    "roi.disclaimer":
-      "*Com base nas suas entradas. Os resultados reais podem variar. Estas projeções assumem taxas consistentes de geração de leads e conversão.",
-
-    // Timeline
-    "timeline.title": "Cronograma de Implementação",
-    "timeline.subtitle":
-      "Um plano de implementação estruturado de 4 semanas para colocar a sua presença digital em funcionamento.",
-    "timeline.week1": "Semana 1",
-    "timeline.discovery": "Descoberta e Planeamento",
-    "timeline.week23": "Semana 2-3",
-    "timeline.development": "Design e Desenvolvimento",
-    "timeline.week4": "Semana 4",
-    "timeline.testing": "Testes e Lançamento",
-    "timeline.ongoing": "Contínuo",
-    "timeline.optimization": "Otimização e Suporte",
-    "timeline.metrics": "Métricas de Sucesso (Mês 1)",
-    "timeline.landing_live": "Landing Page Ao Vivo",
-    "timeline.chatbot_active": "Chatbot IA Ativo",
-    "timeline.lead_capture": "Taxa de Captura de Leads",
-    "timeline.setup_complete": "Configuração Completa",
+    // Lead magnet
+    "lead.title": "Análise gratuita das suas apólices",
+    "lead.description":
+      "Envie-me as apólices que já tem. Reviu tudo sem compromisso e digo-lhe, com honestidade, onde pode melhorar a cobertura e poupar.",
+    "lead.cta": "Pedir análise gratuita",
+    "lead.note": "Sem custos. Sem compromisso. Resposta em até 12 horas.",
 
     // FAQ
     "faq.title": "Perguntas Frequentes",
-    "faq.subtitle": "Obtenha respostas a perguntas comuns sobre a nossa proposta de serviços digitais.",
+    "faq.subtitle": "As respostas às dúvidas mais comuns sobre a análise e os seguros de Vida e Saúde.",
     "faq.contact": "Ainda tem dúvidas?",
     "faq.contact_desc":
-      "Estamos aqui para ajudar! Entre em contacto para discutir as suas necessidades específicas e como os nossos serviços podem beneficiar o seu negócio.",
-    "faq.touch": "Entre em Contacto",
+      "Fale comigo diretamente. Respondo a todas as questões sem compromisso e ajudo-o a perceber o que faz sentido para si.",
+    "faq.touch": "Falar no WhatsApp",
 
-    // CTA
-    "cta.title": "Pronto para Transformar a Sua Presença Digital?",
+    // CTA final
+    "cta.title": "Vamos proteger o que é importante para si?",
     "cta.description":
-      "Vamos discutir qual pacote se alinha melhor com a sua estratégia de crescimento e objetivos comerciais.",
-    "cta.consultation": "Agendar Consulta",
-    "cta.download": "Descarregar Proposta",
+      "Peça já a sua análise gratuita. Em poucos minutos damos o primeiro passo para melhor cobertura e mais poupança.",
+    "cta.consultation": "Pedir análise gratuita",
+    "cta.secondary": "Enviar email",
 
-    // Footer
+    // Rodapé
     "footer.copyright":
-      "© 2026 Filomena Antão - DS Seguros Serviços Digitais. Todos os direitos reservados.",
+      "© 2026 Filomena Antão — Mediadora de Seguros. Todos os direitos reservados.",
     "footer.linkedin": "LinkedIn",
     "footer.instagram": "Instagram",
     "footer.contact": "Contacto",
