@@ -38,16 +38,13 @@ import { whatsappLink, CONTACT, PARTNERS } from "@/lib/site";
 export default function Home() {
   const { t } = useLanguage();
 
-  const scrollToContact = () =>
-    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navegação */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">FA</span>
             </div>
             <div>
@@ -64,7 +61,7 @@ export default function Home() {
       </nav>
 
       {/* 1. Hero */}
-      <section className="relative overflow-hidden py-20 md:py-28 bg-gradient-to-br from-muted to-white">
+      <section className="relative py-20 md:py-28 bg-muted">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -74,15 +71,15 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
                 {t("hero.title")}
               </h1>
-              <p className="text-xl text-foreground/80 font-light">{t("hero.subtitle")}</p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-xl text-foreground font-light max-w-xl">{t("hero.subtitle")}</p>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
                 {t("hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white px-8 rounded-lg shadow-lg hover:shadow-xl transition-all"
+                    className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white px-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
                   >
                     {t("hero.cta")}
                   </Button>
@@ -106,7 +103,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {PARTNERS.map((partner) => (
-                    <span key={partner} className="text-sm font-semibold text-primary/70">
+                    <span key={partner} className="text-sm font-semibold text-primary py-1.5">
                       {partner}
                     </span>
                   ))}
@@ -116,7 +113,7 @@ export default function Home() {
 
             <div className="hidden md:block">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl blur-2xl" />
+                <div className="absolute -inset-4 bg-secondary/10 rounded-2xl blur-2xl" />
                 <img
                   src="/images/hero-family.png"
                   alt="Filomena Antão — Mediadora de Seguros"
@@ -145,7 +142,7 @@ export default function Home() {
             ].map((item, idx) => (
               <Card
                 key={idx}
-                className="p-8 border border-border hover:border-secondary/50 hover:shadow-lg transition-all"
+                className="p-8 border border-border hover:border-secondary/50 hover:shadow-lg transition-shadow"
               >
                 <div className="w-14 h-14 rounded-xl bg-secondary/15 flex items-center justify-center mb-5">
                   <item.icon className="w-7 h-7 text-secondary" />
@@ -234,12 +231,12 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
-              <p className="text-sm uppercase tracking-wide text-white/70 mb-4">
+              <p className="text-sm font-semibold text-white/80 mb-4 py-1.5">
                 {t("trust.partners")}
               </p>
               <div className="flex flex-wrap gap-x-8 gap-y-3">
                 {PARTNERS.map((partner) => (
-                  <span key={partner} className="text-xl font-bold text-white">
+                  <span key={partner} className="text-xl font-bold text-white py-1.5">
                     {partner}
                   </span>
                 ))}
@@ -270,13 +267,13 @@ export default function Home() {
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="bg-secondary hover:bg-secondary/90 text-white px-10 rounded-lg shadow-lg hover:shadow-xl transition-all"
+                className="bg-secondary hover:bg-secondary/90 text-white px-10 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 {t("lead.cta")}
               </Button>
             </a>
-            <p className="text-sm text-muted-foreground mt-4">{t("lead.note")}</p>
+            <p className="text-sm text-muted-foreground mt-4 py-1.5">{t("lead.note")}</p>
           </Card>
         </div>
       </section>
@@ -285,11 +282,11 @@ export default function Home() {
       <FAQ />
 
       {/* 8. CTA final */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-primary to-primary/90">
+      <section className="py-20 md:py-28 bg-primary">
         <div className="container">
-          <div className="text-center space-y-8 max-w-3xl mx-auto">
+          <div className="text-center space-y-8 max-w-2xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-white">{t("cta.title")}</h2>
-            <p className="text-lg text-white/90 leading-relaxed">{t("cta.description")}</p>
+            <p className="text-lg text-white leading-relaxed">{t("cta.description")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
                 <Button
@@ -319,13 +316,13 @@ export default function Home() {
       <footer className="bg-primary text-white/80 py-10 border-t border-white/10">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm">{t("footer.copyright")}</p>
+            <p className="text-sm py-1.5">{t("footer.copyright")}</p>
             <div className="flex gap-6">
               <a
                 href={CONTACT.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm hover:text-white transition-colors"
+                className="text-sm py-1 hover:text-white transition-colors"
               >
                 {t("footer.linkedin")}
               </a>
@@ -333,13 +330,13 @@ export default function Home() {
                 href={CONTACT.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm hover:text-white transition-colors"
+                className="text-sm py-1 hover:text-white transition-colors"
               >
                 {t("footer.instagram")}
               </a>
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="text-sm hover:text-white transition-colors"
+                className="text-sm py-1 hover:text-white transition-colors"
               >
                 {t("footer.contact")}
               </a>

@@ -33,7 +33,7 @@ export function FAQ() {
           {faqs.map((faq, idx) => (
             <Card
               key={idx}
-              className="border border-border hover:border-secondary/50 transition-all overflow-hidden"
+              className="border border-border hover:border-secondary/50 transition-colors overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
