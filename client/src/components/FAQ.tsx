@@ -46,7 +46,7 @@ export function FAQ() {
                 />
               </button>
               {openIndex === idx && (
-                <div className="px-6 pb-6 pt-0 border-t border-border bg-white/50">
+                <div className="px-6 pb-6 pt-4 border-t border-border bg-white/50">
                   <p className="text-foreground/80 leading-relaxed">{faq.answer}</p>
                 </div>
               )}

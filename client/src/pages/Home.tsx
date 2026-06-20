@@ -39,17 +39,17 @@ export default function Home() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       {/* Navegação */}
       <nav className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">FA</span>
+              <span className="text-white font-bold text-sm py-1.5">FA</span>
             </div>
             <div>
               <h1 className="text-lg font-bold text-primary leading-none">{t("nav.brand")}</h1>
-              <p className="text-xs text-muted-foreground mt-1">{t("nav.subtitle")}</p>
+              <p className="text-xs text-muted-foreground mt-1 py-0.5">{t("nav.subtitle")}</p>
             </div>
           </div>
           <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hidden sm:block">
@@ -98,7 +98,7 @@ export default function Home() {
 
               {/* Faixa de confiança */}
               <div className="pt-6">
-                <p className="text-xs uppercase tracking-wide text-muted-foreground mb-3">
+                <p className="text-xs uppercase tracking-wide text-muted-foreground mb-3 py-1">
                   {t("hero.trust")}
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
@@ -322,7 +322,7 @@ export default function Home() {
                 href={CONTACT.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm py-1 hover:text-white transition-colors"
+                className="text-sm py-1.5 hover:text-white transition-colors"
               >
                 {t("footer.linkedin")}
               </a>
@@ -330,13 +330,13 @@ export default function Home() {
                 href={CONTACT.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm py-1 hover:text-white transition-colors"
+                className="text-sm py-1.5 hover:text-white transition-colors"
               >
                 {t("footer.instagram")}
               </a>
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="text-sm py-1 hover:text-white transition-colors"
+                className="text-sm py-1.5 hover:text-white transition-colors"
               >
                 {t("footer.contact")}
               </a>
